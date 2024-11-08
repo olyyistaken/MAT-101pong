@@ -10,12 +10,15 @@ from math import *
 
 def main():
 
+    if int(len(sys.argv)) == 1:
+        print("no argument")
+        exit (84)
     if int(len(sys.argv)) < 8:
         print("too few argument")
-        return 84
+        exit (84)
     if int(len(sys.argv)) > 8:
         print("too many argument")
-        return 84
+        exit (84)
     try:
         x0 = float(sys.argv[1])
         y0 = float(sys.argv[2])
@@ -26,10 +29,10 @@ def main():
         n = int(sys.argv[7])
     except ValueError:
         print("all argument must be numbers")
-        return 84
+        exit (84)
     if n <= 0:
         print ("n must be a postive int")
-        return 84
+        exit (84)
 
     res = x1 - x0
     res2 = y1 - y0
@@ -41,7 +44,7 @@ def main():
     absolute = sqrt(res ** 2 + res2 ** 2 + res3 ** 2)
     if (absolute == 0):
         print("Velocity vector is zero, can't be calculate incidence angle")
-        return 84
+        exit (84)
 
     res_angle = asin(abs(res3)/absolute)
     res_angle *= (180/pi)
@@ -51,7 +54,8 @@ def main():
     print("({:.2f}, {:.2f}, {:.2f})".format(n1, n2, n3))
 
     if (res3 == 0):
-        print("The ball can't bounce")
+        print("The ball can't be bounce")
+        #print("The ball won't reach the paddle") -> à revoir
     else:
         print("The incidence angle is:")
         print("{:.2f} degrees".format(res_angle))
