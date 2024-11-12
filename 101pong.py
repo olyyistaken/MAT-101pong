@@ -5,6 +5,7 @@
 ## File description:
 ## files python for 101pong
 ##
+
 import sys
 from math import *
 
@@ -50,7 +51,7 @@ def main():
     res_angle *= (180/pi)
     print("The velocity vector of the ball is:")
     print("({:.2f}, {:.2f}, {:.2f})".format(res, res2, res3))
-    print("At time t + {:.0f}, ball coordinates will be: ".format(n))
+    print("At time t + {:.0f}, ball coordinates will be:".format(n))
     print("({:.2f}, {:.2f}, {:.2f})".format(n1, n2, n3))
 
     if (res3 == 0):
