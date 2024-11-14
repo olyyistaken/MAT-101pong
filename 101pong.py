@@ -54,9 +54,8 @@ def main():
     print("At time t + {:.0f}, ball coordinates will be:".format(n))
     print("({:.2f}, {:.2f}, {:.2f})".format(n1, n2, n3))
 
-    if (res3 == 0):
-        print("The ball can't be bounce")
-        #print("The ball won't reach the paddle") -> à revoir
+    if (n1 >= 0):
+        print("The ball won't reach the paddle")
     else:
         print("The incidence angle is:")
         print("{:.2f} degrees".format(res_angle))
